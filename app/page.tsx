@@ -1,0 +1,145 @@
+import React from 'react';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { Button } from '@/components/ui/button';
+import { Instagram, Github, MessageCircle, MapPin, Calendar, Mail } from 'lucide-react';
+import Image from 'next/image';
+
+
+const App = () => {
+  // List of Executives
+  const executives = [
+    { name: "Ayush R. Dahal", position: "President", image: "/assets/ayush.jpg" },
+    { name: "Duy Nguyen", position: "Co-Vice President", image: "/assets/duy.jpg" },
+    { name: "Farzeen Nafees", position: "Co-Vice President", image: "/assets/farzeen.jpg" },
+    { name: "Dan Do", position: "Co-Treasurer", image: "/assets/dan.jpg" },
+    { name: "David K. Timms", position: "Co-Treasurer", image: "/assets/david.jpg" },
+    { name: "Nhi Pham", position: "Secretary", image: "/assets/nhi.jpg" },
+    { name: "Victoria Pham", position: "Social Media Chair", image: "/assets/victoria.jpg" },
+    { name: "Leanoria Guerin", position: "SCRUM Master", image: "/assets/leanoria.jpeg" },
+    { name: "Spundun Gusain", position: "SGA Representative", image: "/assets/spundun.jpg" }
+  ];
+
+  // List of Events
+  const events = [
+    {
+      title: "Git Workshop",
+      description: "Learn the essentials of Git version control for seamless collaboration and project management.",
+      date: "October 19, 2024",
+      location: "UNO Math Building, Room 207",
+      actionLabel: "Join the Workshop"
+    },
+    {
+      title: "Career/Resume Workshop",
+      description: "Learn about the application process for software and academia roles through industry professionals and CS/Engineering professors. Get your resumes personally reviewed.",
+      date: "October 30, 2024",
+      location: "UNO Science Building, Room 220",
+      actionLabel: "Join the Workshop"
+    },
+  ];
+
+  return (
+    <div className="min-h-screen bg-white">
+      <div className="container mx-auto px-4 py-12">
+        {/* Hero Section */}
+        <header className="text-center mb-8 flex flex-col items-center">
+          <Image src="/assets/logo.png" alt="ACM Logo" width={20} height={20} className="w-20 h-20 mb-4" />
+          <h1 className="text-4xl font-bold mb-2">UNO ACM</h1>
+          <p className="text-xl text-gray-600">University of New Orleans Chapter of the Association for Computing Machinery</p>
+        </header>
+
+        <main>
+          {/* About Section */}
+          <section className="mb-20">
+            <h2 className="text-3xl font-semibold mb-8 text-center">About Us</h2>
+            <p className="text-gray-800 text-lg leading-relaxed max-w-3xl mx-auto">
+              We are the University of New Orleans chapter of the Association for Computing Machinery (ACM). 
+              Our mission is to foster a vibrant community of computer science enthusiasts, promote knowledge sharing, 
+              and provide unparalleled opportunities for professional growth. Join us in shaping the future of technology!
+            </p>
+          </section>
+
+          {/* Upcoming Events Section */}
+          <section className="mb-20">
+            <h2 className="text-3xl font-semibold mb-8 text-center">Upcoming Events</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+              {events.map((event, index) => (
+                <div key={index} className="border border-gray-200 shadow-lg hover:shadow-xl transition-shadow duration-300 rounded-lg overflow-hidden">
+                  <div className="border-b border-gray-100 p-4">
+                    <h3 className="text-2xl font-semibold text-center">{event.title}</h3>
+                  </div>
+                  <div className="p-6">
+                    <p className="text-gray-700 mb-4">{event.description}</p>
+                    <div className="flex items-center mt-2 text-gray-600">
+                      <Calendar className="mr-2" size={18} />
+                      <span>{event.date}</span>
+                    </div>
+                    <div className="flex items-center mt-1 text-gray-600">
+                      <MapPin className="mr-2" size={18} />
+                      <span>{event.location}</span>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </section>
+
+          {/* Executive Team Section */}
+          <section className="mb-20">
+            <h2 className="text-3xl font-semibold mb-8 text-center">Club Executives</h2>
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-8">
+              {executives.map((exec, index) => (
+                <div key={index} className="text-center group">
+                  <div className="relative mb-4 inline-block">
+                    <Image src={exec.image} alt={exec.name} width={32} height={32} className="w-32 h-32 rounded-full mx-auto mb-3 shadow-md group-hover:shadow-lg transition-shadow duration-300 grayscale" />
+                    <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-10 rounded-full transition-all duration-300"></div>
+                  </div>
+                  <h3 className="font-semibold text-lg text-black">{exec.name}</h3>
+                  <p className="text-sm text-gray-600">{exec.position}</p>
+                </div>
+              ))}
+            </div>
+          </section>
+
+          {/* Call to Action Section */}
+          <section className="mb-20 text-center bg-black text-white rounded-lg shadow-md p-12">
+            <h2 className="text-3xl font-semibold mb-6">Join Us</h2>
+            <p className="mb-8 text-lg">Interested in becoming a member of UNO ACM? Click the button below to sign up!</p>
+            <Button className="bg-white text-black text-lg px-8 py-3 hover:bg-gray-100 transition-transform duration-300 transform hover:scale-105">
+              Join UNO ACM
+            </Button>
+          </section>
+
+          {/* Contact Us Section */}
+          <section className="text-center">
+            <h2 className="text-3xl font-semibold mb-8">Contact Us</h2>
+            <div className="flex flex-wrap justify-center items-center space-x-6 sm:space-x-10 px-4">
+              <a href="https://www.instagram.com/uno_acm" className="flex items-center text-gray-800 hover:text-black transition-colors duration-300 mb-4 sm:mb-0">
+                <Instagram size={28} />
+                <span className="ml-2 text-lg">@uno_acm</span>
+              </a>
+              <a href="https://github.com/uno-acm" className="flex items-center text-gray-800 hover:text-black transition-colors duration-300 mb-4 sm:mb-0">
+                <Github size={28} />
+                <span className="ml-2 text-lg">uno-acm</span>
+              </a>
+              <a href="https://discord.gg/unoacm" className="flex items-center text-gray-800 hover:text-black transition-colors duration-300 mb-4 sm:mb-0">
+                <MessageCircle size={28} />
+                <span className="ml-2 text-lg">CSCI Discord</span>
+              </a>
+              <a href="mailto:acm@cs.uno.edu" className="flex items-center text-gray-800 hover:text-black transition-colors duration-300">
+                <Mail size={28} />
+                <span className="ml-2 text-lg">acm@cs.uno.edu</span>
+              </a>
+            </div>
+          </section>
+        </main>
+
+        {/* Footer Section */}
+        <footer className="mt-20 text-center text-gray-600 border-t border-gray-200 pt-8">
+          <p>&copy; 2024 UNO ACM. All rights reserved.</p>
+        </footer>
+      </div>
+    </div>
+  );
+};
+
+export default App;
