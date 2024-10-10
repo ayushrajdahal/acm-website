@@ -1,5 +1,5 @@
 import React from 'react';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Instagram, Github, MessageCircle, MapPin, Calendar, Mail, Linkedin } from 'lucide-react';
 import Image from 'next/image';
@@ -63,11 +63,11 @@ const App = () => {
             <h2 className="text-3xl font-semibold mb-8 text-center">Upcoming Events</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
               {events.map((event, index) => (
-                <div key={index} className="border border-gray-200 shadow-lg hover:shadow-xl transition-shadow duration-300 rounded-lg overflow-hidden">
-                  <div className="border-b border-gray-100 p-4">
-                    <h3 className="text-2xl font-semibold text-center">{event.title}</h3>
-                  </div>
-                  <div className="p-6">
+                <Card key={index} className="border border-gray-200 shadow-lg hover:shadow-xl transition-shadow duration-300 rounded-lg overflow-hidden">
+                  <CardHeader className="border-b border-gray-100 p-4">
+                    <CardTitle className="text-center">{event.title}</CardTitle>
+                  </CardHeader>
+                  <CardContent className="p-6">
                     <p className="text-gray-700 mb-4">{event.description}</p>
                     <div className="flex items-center mt-2 text-gray-600">
                       <Calendar className="mr-2" size={18} />
@@ -77,8 +77,8 @@ const App = () => {
                       <MapPin className="mr-2" size={18} />
                       <span>{event.location}</span>
                     </div>
-                  </div>
-                </div>
+                  </CardContent>
+                </Card>
               ))}
             </div>
           </section>
