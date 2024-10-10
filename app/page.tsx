@@ -11,12 +11,13 @@ const App = () => {
     { name: "Ayush R. Dahal", position: "President", image: "/assets/ayush.jpg" },
     { name: "Duy Nguyen", position: "Co-Vice President", image: "/assets/duy.jpg" },
     { name: "Farzeen Nafees", position: "Co-Vice President", image: "/assets/farzeen.jpg" },
+    { name: "Nhi Pham", position: "Secretary", image: "/assets/nhi.jpg" },
     { name: "Dan Do", position: "Co-Treasurer", image: "/assets/dan.jpg" },
     { name: "David K. Timms", position: "Co-Treasurer", image: "/assets/david.jpg" },
-    { name: "Nhi Pham", position: "Secretary", image: "/assets/nhi.jpg" },
     { name: "Victoria Pham", position: "Social Media Chair", image: "/assets/victoria.jpg" },
     { name: "Leanoria Guerin", position: "SCRUM Master", image: "/assets/leanoria.jpeg" },
-    { name: "Spundun Gusain", position: "SGA Representative", image: "/assets/spundun.jpg" }
+    { name: "Ammar", position: "Workshop Chair", image: "/assets/ammar.webp" },
+    { name: "Spundun Gusain", position: "SGA Ambassador", image: "/assets/spundun.jpg" }
   ];
 
   // List of Events
@@ -85,7 +86,7 @@ const App = () => {
 
           {/* Executive Team Section */}
           <section className="mb-20">
-            <h2 className="text-3xl font-semibold mb-8 text-center">Club Executives</h2>
+            <h2 className="text-3xl font-semibold mb-8 text-center">Executive Team</h2>
             <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-8">
               {executives.map((exec, index) => (
                 <div key={index} className="text-center group">
