@@ -90,7 +90,7 @@ const App = () => {
               {executives.map((exec, index) => (
                 <div key={index} className="text-center group">
                   <div className="relative mb-4 inline-block">
-                    <Image src={exec.image} alt={exec.name} width={400} height={400} className="w-32 h-32 rounded-full mx-auto mb-3 shadow-md group-hover:shadow-lg transition-shadow duration-300 grayscale" />
+                    <Image src={exec.image} alt={exec.name} width={150} height={150} className="rounded-full mx-auto mb-3 shadow-md group-hover:shadow-lg transition-shadow duration-300 grayscale" />
                     <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-10 rounded-full transition-all duration-300"></div>
                   </div>
                   <h3 className="font-semibold text-lg text-black">{exec.name}</h3>
