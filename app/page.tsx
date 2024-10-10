@@ -104,7 +104,7 @@ const App = () => {
           <section className="mb-20 text-center bg-black text-white rounded-lg shadow-md p-12">
             <h2 className="text-3xl font-semibold mb-6">Join Us</h2>
             <p className="mb-8 text-lg">Interested in becoming a member of UNO ACM? Click the button below to sign up!</p>
-            <a href='https://forms.office.com/r/8eKHQgyLjL'>
+            <a href='https://forms.office.com/r/8eKHQgyLjL' target="_blank">
               <Button className="bg-white text-black text-lg px-8 py-3 hover:bg-gray-100 transition-transform duration-300 transform hover:scale-105">
                 Join UNO ACM
               </Button>
@@ -115,23 +115,23 @@ const App = () => {
           <section className="text-center">
             <h2 className="text-3xl font-semibold mb-8">Get in Touch</h2>
             <div className="flex flex-wrap justify-center items-center space-x-6 sm:space-x-10 px-4">
-              <a href="https://www.instagram.com/uno_acm" className="flex items-center text-gray-800 hover:text-black transition-colors duration-300 mb-4 sm:mb-0">
+              <a href="https://www.instagram.com/uno_acm" target="_blank" className="flex items-center text-gray-800 hover:text-black transition-colors duration-300 mb-4 sm:mb-0">
                 <Instagram size={28} />
                 <span className="ml-2 text-lg">Instagram</span>
               </a>
-              <a href="https://www.linkedin.com/company/104812824/" className="flex items-center text-gray-800 hover:text-black transition-colors duration-300 mb-4 sm:mb-0">
+              <a href="https://www.linkedin.com/company/104812824/" target="_blank" className="flex items-center text-gray-800 hover:text-black transition-colors duration-300 mb-4 sm:mb-0">
                 <Linkedin size={28} />
                 <span className="ml-2 text-lg">LinkedIn</span>
               </a>
-              <a href="https://github.com/uno-acm" className="flex items-center text-gray-800 hover:text-black transition-colors duration-300 mb-4 sm:mb-0">
+              <a href="https://github.com/uno-acm" target="_blank" className="flex items-center text-gray-800 hover:text-black transition-colors duration-300 mb-4 sm:mb-0">
                 <Github size={28} />
                 <span className="ml-2 text-lg">GitHub</span>
               </a>
-              <a href="https://discord.gg/pcWvbuw6B7" className="flex items-center text-gray-800 hover:text-black transition-colors duration-300 mb-4 sm:mb-0">
+              <a href="https://discord.gg/pcWvbuw6B7" target="_blank" className="flex items-center text-gray-800 hover:text-black transition-colors duration-300 mb-4 sm:mb-0">
                 <MessageCircle size={28} />
                 <span className="ml-2 text-lg">CSCI Discord</span>
               </a>
-              <a href="mailto:acm@cs.uno.edu" className="flex items-center text-gray-800 hover:text-black transition-colors duration-300">
+              <a href="mailto:acm@cs.uno.edu" target="_blank" className="flex items-center text-gray-800 hover:text-black transition-colors duration-300">
                 <Mail size={28} />
                 <span className="ml-2 text-lg">acm@cs.uno.edu</span>
               </a>
