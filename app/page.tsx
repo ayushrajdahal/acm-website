@@ -113,7 +113,7 @@ const App = () => {
 
           {/* Contact Us Section */}
           <section className="text-center">
-            <h2 className="text-3xl font-semibold mb-8">Contact Us</h2>
+            <h2 className="text-3xl font-semibold mb-8">Get in Touch</h2>
             <div className="flex flex-wrap justify-center items-center space-x-6 sm:space-x-10 px-4">
               <a href="https://www.instagram.com/uno_acm" className="flex items-center text-gray-800 hover:text-black transition-colors duration-300 mb-4 sm:mb-0">
                 <Instagram size={28} />
