@@ -83,7 +83,8 @@ This will run ESLint on the project files.
   - `globals.css`: Global CSS styles.
   - `layout.tsx`: Layout component for the application.
   - `page.tsx`: Main page component.
-- `assets/`: Static assets such as images.
+- `public/`: Public assets accessible directly via URL.
+  - `assets/`: Static assets such as images.
 - `components/`: Reusable UI components.
   - `ui/`: UI-specific components.
 - `components.json`: Component configuration file.
