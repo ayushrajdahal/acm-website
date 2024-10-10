@@ -42,7 +42,7 @@ const App = () => {
       <div className="container mx-auto px-4 py-12">
         {/* Hero Section */}
         <header className="text-center mb-8 flex flex-col items-center">
-          <Image src="/assets/logo.png" alt="ACM Logo" width={20} height={20} className="w-20 h-20 mb-4" />
+          <Image src="/assets/logo.png" alt="ACM Logo" width={175} height={175} className="mb-4" />
           <h1 className="text-4xl font-bold mb-2">UNO ACM</h1>
           <p className="text-xl text-gray-600">University of New Orleans Chapter of the Association for Computing Machinery</p>
         </header>
@@ -90,7 +90,7 @@ const App = () => {
               {executives.map((exec, index) => (
                 <div key={index} className="text-center group">
                   <div className="relative mb-4 inline-block">
-                    <Image src={exec.image} alt={exec.name} width={32} height={32} className="w-32 h-32 rounded-full mx-auto mb-3 shadow-md group-hover:shadow-lg transition-shadow duration-300 grayscale" />
+                    <Image src={exec.image} alt={exec.name} width={400} height={400} className="w-32 h-32 rounded-full mx-auto mb-3 shadow-md group-hover:shadow-lg transition-shadow duration-300 grayscale" />
                     <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-10 rounded-full transition-all duration-300"></div>
                   </div>
                   <h3 className="font-semibold text-lg text-black">{exec.name}</h3>
