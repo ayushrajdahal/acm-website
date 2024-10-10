@@ -1,7 +1,7 @@
 import React from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { Instagram, Github, MessageCircle, MapPin, Calendar, Mail } from 'lucide-react';
+import { Instagram, Github, MessageCircle, MapPin, Calendar, Mail, Linkedin } from 'lucide-react';
 import Image from 'next/image';
 
 
@@ -104,9 +104,11 @@ const App = () => {
           <section className="mb-20 text-center bg-black text-white rounded-lg shadow-md p-12">
             <h2 className="text-3xl font-semibold mb-6">Join Us</h2>
             <p className="mb-8 text-lg">Interested in becoming a member of UNO ACM? Click the button below to sign up!</p>
-            <Button className="bg-white text-black text-lg px-8 py-3 hover:bg-gray-100 transition-transform duration-300 transform hover:scale-105">
-              Join UNO ACM
-            </Button>
+            <a href='https://forms.office.com/r/8eKHQgyLjL'>
+              <Button className="bg-white text-black text-lg px-8 py-3 hover:bg-gray-100 transition-transform duration-300 transform hover:scale-105">
+                Join UNO ACM
+              </Button>
+            </a>
           </section>
 
           {/* Contact Us Section */}
@@ -115,13 +117,17 @@ const App = () => {
             <div className="flex flex-wrap justify-center items-center space-x-6 sm:space-x-10 px-4">
               <a href="https://www.instagram.com/uno_acm" className="flex items-center text-gray-800 hover:text-black transition-colors duration-300 mb-4 sm:mb-0">
                 <Instagram size={28} />
-                <span className="ml-2 text-lg">@uno_acm</span>
+                <span className="ml-2 text-lg">Instagram</span>
+              </a>
+              <a href="https://www.linkedin.com/company/104812824/" className="flex items-center text-gray-800 hover:text-black transition-colors duration-300 mb-4 sm:mb-0">
+                <Linkedin size={28} />
+                <span className="ml-2 text-lg">LinkedIn</span>
               </a>
               <a href="https://github.com/uno-acm" className="flex items-center text-gray-800 hover:text-black transition-colors duration-300 mb-4 sm:mb-0">
                 <Github size={28} />
-                <span className="ml-2 text-lg">uno-acm</span>
+                <span className="ml-2 text-lg">GitHub</span>
               </a>
-              <a href="https://discord.gg/unoacm" className="flex items-center text-gray-800 hover:text-black transition-colors duration-300 mb-4 sm:mb-0">
+              <a href="https://discord.gg/pcWvbuw6B7" className="flex items-center text-gray-800 hover:text-black transition-colors duration-300 mb-4 sm:mb-0">
                 <MessageCircle size={28} />
                 <span className="ml-2 text-lg">CSCI Discord</span>
               </a>
