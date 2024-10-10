@@ -44,7 +44,7 @@ const App = () => {
         <header className="text-center mb-8 flex flex-col items-center">
           <Image src="/assets/logo.png" alt="ACM Logo" width={175} height={175} className="mb-4" />
           <h1 className="text-4xl font-bold mb-2">UNO ACM</h1>
-          <p className="text-xl text-gray-600">University of New Orleans Chapter of the Association for Computing Machinery</p>
+          <p className="text-xl text-gray-600"><i>University of New Orleans Chapter of the Association for Computing Machinery</i></p>
         </header>
 
         <main>
