@@ -4,18 +4,14 @@ This is the official website for the University of New Orleans chapter of the As
 
 ## Table of Contents
 
-- [UNO ACM Website](#uno-acm-website)
-  - [Table of Contents](#table-of-contents)
-  - [Getting Started](#getting-started)
-    - [Prerequisites](#prerequisites)
-    - [Installation](#installation)
-  - [Development](#development)
-    - [Running the Development Server](#running-the-development-server)
-    - [Building the Project](#building-the-project)
-    - [Linting](#linting)
-  - [Project Structure](#project-structure)
-  - [Contributing](#contributing)
-  - [License](#license)
+- [Getting Started](#getting-started)
+  - [Prerequisites](#prerequisites)
+  - [Installation](#installation)
+- [Development](#development)
+  - [Running the Development Server](#running-the-development-server)
+  - [Building the Project](#building-the-project)
+  - [Linting](#linting)
+- [Project Structure](#project-structure)
 
 ## Getting Started
 
@@ -31,7 +27,7 @@ Ensure you have the following installed on your machine:
 1. Clone the repository:
 
     ```sh
-    git clone https://github.com/your-username/uno-acm-website.git
+    git clone https://github.com/uno-acm/uno-acm-website.git
     cd uno-acm-website
     ```
 
