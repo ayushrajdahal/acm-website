@@ -1,5 +1,5 @@
 import React from 'react';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Instagram, Github, MessageCircle, MapPin, Calendar, Mail, Linkedin } from 'lucide-react';
 import Image from 'next/image';
@@ -25,15 +25,17 @@ const App = () => {
     {
       title: "Git Workshop",
       description: "Learn the essentials of Git version control for seamless collaboration and project management.",
-      date: "October 19, 2024",
-      location: "UNO Math Building, Room 207",
+      // date: "October 19, 2024",
+      // location: "UNO Math Building, Room 207",
+      date: "TBD",
+      location: "TBD",
       actionLabel: "Join the Workshop"
     },
     {
       title: "Career/Resume Workshop",
       description: "Learn about the application process for software and academia roles through industry professionals and CS/Engineering professors. Get your resumes personally reviewed.",
-      date: "October 30, 2024",
-      location: "UNO Science Building, Room 220",
+      date: "TBD",
+      location: "TBD",
       actionLabel: "Join the Workshop"
     },
   ];
