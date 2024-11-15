@@ -18,47 +18,47 @@ const App = () => {
     {
       name: "Ayush R. Dahal",
       position: "President",
-      image: "/public/assets/ayush.jpg",
+      image: "/assets/ayush.jpg",
     },
     {
       name: "Duy Nguyen",
       position: "Co-Vice President",
-      image: "/public/assets/duy.jpg",
+      image: "/assets/duy.jpg",
     },
     {
       name: "Farzeen Nafees",
       position: "Co-Vice President",
-      image: "/public/assets/farzeen.jpg",
+      image: "/assets/farzeen.jpg",
     },
     {
       name: "Nhi Pham",
       position: "Secretary",
-      image: "/public/assets/nhi.jpg",
+      image: "/assets/nhi.jpg",
     },
     {
       name: "Dan Do",
       position: "Co-Treasurer",
-      image: "/public/assets/dan.jpg",
+      image: "/assets/dan.jpg",
     },
     {
       name: "David K. Timms",
       position: "Co-Treasurer",
-      image: "/public/assets/david.jpg",
+      image: "/assets/david.jpg",
     },
     {
       name: "Leanoria Guerin",
       position: "SCRUM Master",
-      image: "/public/assets/leanoria.jpeg",
+      image: "/assets/leanoria.jpeg",
     },
     {
       name: "Ammar Kadic",
       position: "Workshop Chair",
-      image: "/public/assets/ammar.webp",
+      image: "/assets/ammar.webp",
     },
     {
       name: "Spundun Gusain",
       position: "SGA Ambassador",
-      image: "/public/assets/spundun.jpg",
+      image: "/assets/spundun.jpg",
     },
   ];
 
@@ -90,7 +90,7 @@ const App = () => {
         {/* Hero Section */}
         <header className="text-center mb-8 flex flex-col items-center">
           <Image
-            src="/public/assets/logo.png"
+            src="/assets/logo.png"
             alt="ACM Logo"
             width={175}
             height={175}
