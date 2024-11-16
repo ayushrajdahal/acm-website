@@ -18,47 +18,47 @@ const App = () => {
     {
       name: "Ayush R. Dahal",
       position: "President",
-      image: "/assets/ayush.jpg",
+      image: "/uno-acm-website/assets/ayush.jpg",
     },
     {
       name: "Duy Nguyen",
       position: "Co-Vice President",
-      image: "/assets/duy.jpg",
+      image: "/uno-acm-website/assets/duy.jpg",
     },
     {
       name: "Farzeen Nafees",
       position: "Co-Vice President",
-      image: "/assets/farzeen.jpg",
+      image: "/uno-acm-website/assets/farzeen.jpg",
     },
     {
       name: "Nhi Pham",
       position: "Secretary",
-      image: "/assets/nhi.jpg",
+      image: "/uno-acm-website/assets/nhi.jpg",
     },
     {
       name: "Dan Do",
       position: "Co-Treasurer",
-      image: "/assets/dan.jpg",
+      image: "/uno-acm-website/assets/dan.jpg",
     },
     {
       name: "David K. Timms",
       position: "Co-Treasurer",
-      image: "/assets/david.jpg",
+      image: "/uno-acm-website/assets/david.jpg",
     },
     {
       name: "Leanoria Guerin",
       position: "SCRUM Master",
-      image: "/assets/leanoria.jpeg",
+      image: "/uno-acm-website/assets/leanoria.jpeg",
     },
     {
       name: "Ammar Kadic",
       position: "Workshop Chair",
-      image: "/assets/ammar.webp",
+      image: "/uno-acm-website/assets/ammar.webp",
     },
     {
       name: "Spundun Gusain",
       position: "SGA Ambassador",
-      image: "/assets/spundun.jpg",
+      image: "/uno-acm-website/assets/spundun.jpg",
     },
   ];
 
@@ -90,7 +90,7 @@ const App = () => {
         {/* Hero Section */}
         <header className="text-center mb-8 flex flex-col items-center">
           <Image
-            src="/assets/logo.png"
+            src="/uno-acm-website/assets/logo.png"
             alt="ACM Logo"
             width={175}
             height={175}
