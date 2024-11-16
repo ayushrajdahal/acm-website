@@ -67,7 +67,7 @@ const App = () => {
     {
       title: "App Development Workshop",
       description:
-        "Learn the essentials of Git version control for seamless collaboration and project management.",
+        "Learn How to Build Cross-Platform Apps Using Flutter and Firebase by Building a Real-time Chat Application.",
       // date: "October 19, 2024",
       // location: "UNO Math Building, Room 207",
       date: "November 18, 2024",
