@@ -65,6 +65,16 @@ const App = () => {
   // List of Events
   const events = [
     {
+      title: "App Development Workshop",
+      description:
+        "Learn the essentials of Git version control for seamless collaboration and project management.",
+      // date: "October 19, 2024",
+      // location: "UNO Math Building, Room 207",
+      date: "November 18, 2024",
+      location: "Math Building, Room 317",
+      actionLabel: "RSVP",
+    },
+    {
       title: "Git Workshop",
       description:
         "Learn the essentials of Git version control for seamless collaboration and project management.",
@@ -72,16 +82,16 @@ const App = () => {
       // location: "UNO Math Building, Room 207",
       date: "TBD",
       location: "TBD",
-      actionLabel: "Join the Workshop",
+      actionLabel: "RSVP",
     },
-    {
-      title: "Career/Resume Workshop",
-      description:
-        "Learn about the application process for software and academia roles through industry professionals and CS/Engineering professors. Get your resumes personally reviewed.",
-      date: "TBD",
-      location: "TBD",
-      actionLabel: "Join the Workshop",
-    },
+    // {
+    //   title: "Career/Resume Workshop",
+    //   description:
+    //     "Learn about the application process for software and academia roles through industry professionals and CS/Engineering professors. Get your resumes personally reviewed.",
+    //   date: "TBD",
+    //   location: "TBD",
+    //   actionLabel: "Join the Workshop",
+    // },
   ];
 
   return (
