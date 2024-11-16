@@ -126,7 +126,7 @@ const App = () => {
               for Computing Machinery (ACM). Our mission is to foster a vibrant
               community of computer science enthusiasts, promote knowledge
               sharing, and provide unparalleled opportunities for professional
-              growth. Join us in shaping the future of technology!
+              growth.
             </p>
           </section>
 
