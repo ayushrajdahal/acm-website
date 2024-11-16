@@ -27,8 +27,8 @@ Ensure you have the following installed on your machine:
 1. Clone the repository:
 
     ```sh
-    git clone https://github.com/uno-acm/uno-acm-website.git
-    cd uno-acm-website
+    git clone https://github.com/uno-acm/uno-acm.github.io.git
+    cd uno-acm.github.io
     ```
 
 2. Install the dependencies:
