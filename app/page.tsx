@@ -58,7 +58,7 @@ const App = () => {
     {
       name: "Spundun Gusain",
       position: "SGA Ambassador",
-      image: "/assets/spundun.jpg",
+      image: "/assets/spundun.png",
     },
   ];
 
