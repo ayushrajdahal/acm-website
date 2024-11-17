@@ -2,7 +2,7 @@
 const nextConfig = {
     // basePath: "/",
     images: {
-        unoptimized: false,
+        unoptimized: true,
       },
     output: "export",  // <=== enables static exports
 };
