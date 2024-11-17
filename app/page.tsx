@@ -1,4 +1,5 @@
-import React from "react";
+"use client";
+import React, { useState, useEffect } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import {
@@ -9,178 +10,240 @@ import {
   Calendar,
   Mail,
   Linkedin,
+  ChevronUp,
+  Menu,
+  X,
 } from "lucide-react";
+import { faculties, executives } from "./members.json";
+import { events } from "./events.json";
+import Link from "next/link";
 import Image from "next/image";
 
 const App = () => {
-  // List of Executives
-  const executives = [
-    {
-      name: "Ayush R. Dahal",
-      position: "President",
-      image: "/assets/ayush.jpeg",
-    },
-    {
-      name: "Duy Nguyen",
-      position: "Co-Vice President",
-      image: "/assets/duy.jpg",
-    },
-    {
-      name: "Farzeen Nafees",
-      position: "Co-Vice President",
-      image: "/assets/farzeen.png",
-    },
-    {
-      name: "Nhi Pham",
-      position: "Secretary",
-      image: "/assets/nhi.png",
-    },
-    {
-      name: "Dan Do",
-      position: "Co-Treasurer",
-      image: "/assets/dan.png",
-    },
-    {
-      name: "David K. Timms",
-      position: "Co-Treasurer",
-      image: "/assets/david.png",
-    },
-    {
-      name: "Leanoria Guerin",
-      position: "SCRUM Master",
-      image: "/assets/leanoria.png",
-    },
-    {
-      name: "Ammar Kadic",
-      position: "Workshop Chair",
-      image: "/assets/ammar.png",
-    },
-    {
-      name: "Spundun Gusain",
-      position: "SGA Ambassador",
-      image: "/assets/spundun.png",
-    },
-  ];
+  const [isScrolled, setIsScrolled] = useState(false);
+  const [activeFilter, setActiveFilter] = useState("upcoming");
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  const faculties = [
-    {
-      name: "Dr. Christopher M. Summa",
-      position: "Faculty Sponsor",
-      image: "/assets/drsumma.png",
-    },
-    {
-      name: "Dr. Ted Holmberg",
-      position: "Industry Liaison",
-      image: "/assets/drholmberg.png",
-    },
-    {
-      name: "Dr. Vassil Roussev",
-      position: "Advisor",
-      image: "/assets/drroussev.png",
-    },
-    {
-      name: "Dr. Ben Samuel",
-      position: "Advisor",
-      image: "/assets/drsamuel.jpeg",
-    },
-    {
-      name: "Mr. David Pace",
-      position: "IT Director",
-      image: "/assets/mrpace.png",
-    },
-  ];
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 300);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
-  // List of Events
-  const events = [
-    {
-      title: "App Development Workshop",
-      description:
-        "Learn how to build cross-platform apps using Flutter and Firebase by building a real-time chat application.",
-      // date: "October 19, 2024",
-      // location: "UNO Math Building, Room 207",
-      date: "November 18, 2024",
-      location: "Math Building, Room 317",
-      actionLabel: "RSVP",
-    },
-    {
-      title: "Git Workshop",
-      description:
-        "Learn the essentials of Git version control for seamless collaboration and project management.",
-      // date: "October 19, 2024",
-      // location: "UNO Math Building, Room 207",
-      date: "Spring 2025",
-      location: "TBD",
-      actionLabel: "RSVP",
-    },
-    // {
-    //   title: "Career/Resume Workshop",
-    //   description:
-    //     "Learn about the application process for software and academia roles through industry professionals and CS/Engineering professors. Get your resumes personally reviewed.",
-    //   date: "TBD",
-    //   location: "TBD",
-    //   actionLabel: "Join the Workshop",
-    // },
-  ];
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
+  const filteredEvents = events.filter((event) => {
+    const eventDate = new Date(event.date);
+    const today = new Date();
+    return activeFilter === "upcoming" ? eventDate >= today : eventDate < today;
+  });
 
   return (
     <div className="min-h-screen bg-white">
-      <div className="container mx-auto px-4 py-12">
+      {/* Navigation Bar */}
+      <nav className="fixed w-full top-0 bg-white/80 backdrop-blur-md border-b border-gray-100 z-50">
+        <div className="container mx-auto px-4 py-4">
+          <div className="flex justify-between items-center">
+            <div className="flex items-center space-x-4" onClick={scrollToTop}>
+              <Image
+                src="/assets/logo.png"
+                alt="ACM Logo"
+                width={40}
+                height={40}
+                className="w-10 h-10"
+              />
+              <span className="text-lg font-medium">UNO ACM</span>
+            </div>
+
+            {/* Desktop Navigation */}
+            <div className="hidden md:flex items-center space-x-8">
+              <div className="space-x-6">
+                <Link
+                  href="#about"
+                  className="text-gray-600 hover:text-black transition-colors text-sm"
+                >
+                  About
+                </Link>
+                <Link
+                  href="#events"
+                  className="text-gray-600 hover:text-black transition-colors text-sm"
+                >
+                  Events
+                </Link>
+                <Link
+                  href="#team"
+                  className="text-gray-600 hover:text-black transition-colors text-sm"
+                >
+                  Team
+                </Link>
+                <Link
+                  href="#contact"
+                  className="text-gray-600 hover:text-black transition-colors text-sm"
+                >
+                  Contact
+                </Link>
+              </div>
+              <Button className="bg-black hover:bg-gray-800 text-sm">
+                Join Now
+              </Button>
+            </div>
+
+            {/* Mobile Menu Button */}
+            <button
+              className="md:hidden"
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
+            >
+              {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+            </button>
+          </div>
+        </div>
+
+        {/* Mobile Navigation */}
+        <div
+          className={`md:hidden bg-white border-t border-gray-100 transition-all duration-300 ${
+            isMenuOpen ? "max-h-64" : "max-h-0 overflow-hidden"
+          }`}
+        >
+          <div className="container mx-auto px-4 py-4 flex flex-col space-y-4">
+            <a
+              href="#about"
+              className="text-gray-600 hover:text-black transition-colors"
+            >
+              About
+            </a>
+            <a
+              href="#events"
+              className="text-gray-600 hover:text-black transition-colors"
+            >
+              Events
+            </a>
+            <a
+              href="#team"
+              className="text-gray-600 hover:text-black transition-colors"
+            >
+              Team
+            </a>
+            <a
+              href="#contact"
+              className="text-gray-600 hover:text-black transition-colors"
+            >
+              Contact
+            </a>
+            <Button className="bg-black hover:bg-gray-800 w-full">
+              Join Now
+            </Button>
+          </div>
+        </div>
+      </nav>
+
+      <div className="container mx-auto px-4 py-12 mt-16">
         {/* Hero Section */}
-        <header className="text-center mb-8 flex flex-col items-center">
-          <Image
-            src="/assets/logo.png"
-            alt="ACM Logo"
-            width={175}
-            height={175}
-            className="mb-4"
-          />
-          <h1 className="text-4xl font-bold mb-2">UNO ACM</h1>
-          <p className="text-xl text-gray-600">
-            <i>
-              University of New Orleans Chapter of the Association for Computing
-              Machinery
-            </i>
+        <header className="text-center mb-24 flex flex-col items-center">
+          <div className="relative mb-8">
+            <Image
+              src="/assets/logo.png"
+              alt="ACM Logo"
+              className="w-40 h-40 animate-float"
+            />
+            <div className="absolute inset-0 bg-gray-100 rounded-full blur-3xl -z-10"></div>
+          </div>
+          <h1 className="text-5xl font-bold mb-6">UNO ACM</h1>
+          <p className="text-lg text-gray-600 max-w-2xl mx-auto leading-relaxed">
+            University of New Orleans Chapter of the Association for Computing
+            Machinery
           </p>
         </header>
 
         <main>
           {/* About Section */}
-          <section className="mb-20">
-            <h2 className="text-3xl font-semibold mb-8 text-center">
-              About Us
-            </h2>
-            <p className="text-gray-800 text-lg leading-relaxed max-w-3xl mx-auto">
+          <section id="about" className="mb-32 scroll-mt-24">
+            <h2 className="text-3xl font-medium mb-16 text-center">About Us</h2>
+            <p className="text-center font-medium mb-16 mx-8">
               We are the University of New Orleans chapter of the Association
-              for Computing Machinery (ACM). Our mission is to foster a vibrant
-              community of computer science enthusiasts, promote knowledge
-              sharing, and provide unparalleled opportunities for professional
-              growth.
+              for Computing Machinery (UNO ACM). Our mission is to foster a
+              vibrant community of computer science and engineering enthusiasts,
+              promote knowledge sharing, and provide unparalleled opportunities
+              for professional growth.
             </p>
-          </section>
-
-          {/* Upcoming Events Section */}
-          <section className="mb-20">
-            <h2 className="text-3xl font-semibold mb-8 text-center">
-              Upcoming Events
-            </h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
-              {events.map((event, index) => (
+            <div className="grid md:grid-cols-3 gap-8">
+              {[
+                {
+                  title: "Collaboration",
+                  description:
+                    "Work on interdisciplinary projects in groups, build lasting relationships.",
+                },
+                {
+                  title: "Learning",
+                  description:
+                    "Access workshops, seminars, and guest lectures hosted by industry experts and academics.",
+                },
+                {
+                  title: "Growth",
+                  description:
+                    "Develop professional skills and expand your career opportunities.",
+                },
+              ].map((item, index) => (
                 <Card
                   key={index}
-                  className="border border-gray-200 shadow-lg hover:shadow-xl transition-shadow duration-300 rounded-lg overflow-hidden"
+                  className="border-none shadow-md hover:shadow-xl transition-shadow duration-300"
                 >
-                  <CardHeader className="border-b border-gray-100 p-4">
-                    <CardTitle className="text-center">{event.title}</CardTitle>
+                  <CardHeader>
+                    <CardTitle className="text-center text-lg">
+                      {item.title}
+                    </CardTitle>
+                  </CardHeader>
+                  <CardContent className="text-center text-gray-600">
+                    {item.description}
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+          </section>
+
+          {/* Events Section */}
+          <section id="events" className="mb-32 scroll-mt-24">
+            <h2 className="text-3xl font-medium mb-16 text-center">Events</h2>
+            <div className="flex justify-center mb-12 space-x-4">
+              {["upcoming", "past"].map((filter) => (
+                <Button
+                  key={filter}
+                  onClick={() => setActiveFilter(filter)}
+                  className={`${
+                    activeFilter === filter
+                      ? "bg-black text-white"
+                      : "bg-gray-100 text-gray-700 hover:bg-gray-200"
+                  } capitalize`}
+                >
+                  {filter} Events
+                </Button>
+              ))}
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              {filteredEvents.map((event, index) => (
+                <Card
+                  key={index}
+                  className="border border-gray-100 hover:border-gray-200 shadow-sm hover:shadow-md transition-all duration-300"
+                >
+                  <CardHeader className="border-b border-gray-50 bg-gray-50">
+                    <CardTitle className="text-lg font-medium text-center">
+                      {event.title}
+                    </CardTitle>
                   </CardHeader>
                   <CardContent className="p-6">
-                    <p className="text-gray-700 mb-4">{event.description}</p>
-                    <div className="flex items-center mt-2 text-gray-600">
-                      <Calendar className="mr-2" size={18} />
-                      <span>{event.date}</span>
-                    </div>
-                    <div className="flex items-center mt-1 text-gray-600">
-                      <MapPin className="mr-2" size={18} />
-                      <span>{event.location}</span>
+                    <p className="text-gray-600 mb-4">{event.description}</p>
+                    <div className="space-y-2 text-sm text-gray-500">
+                      <div className="flex items-center">
+                        <Calendar className="mr-2" size={16} />
+                        <span>{event.date}</span>
+                      </div>
+                      <div className="flex items-center">
+                        <MapPin className="mr-2" size={16} />
+                        <span>{event.location}</span>
+                      </div>
                     </div>
                   </CardContent>
                 </Card>
@@ -188,126 +251,136 @@ const App = () => {
             </div>
           </section>
 
-          {/* Executive Team Section */}
-          <section className="mb-20">
-            <h2 className="text-3xl font-semibold mb-8 text-center">
-              Executive Team
-            </h2>
-            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-8">
-              {executives.map((exec, index) => (
-                <div key={index} className="text-center group">
-                  <div className="relative mb-4 inline-block">
-                    <Image
-                      src={exec.image}
-                      alt={exec.name}
-                      width={160}
-                      height={160}
-                      className="rounded-full mx-auto mb-3 shadow-md group-hover:shadow-lg transition-shadow duration-300"
-                    />
-                    <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-10 rounded-full transition-all duration-300"></div>
-                  </div>
-                  <h3 className="font-semibold text-lg text-black">
-                    {exec.name}
-                  </h3>
-                  <p className="text-sm text-gray-600">{exec.position}</p>
-                </div>
-              ))}
-            </div>
-          </section>
+          {/* Team Section */}
+          <section id="team" className="mb-32 scroll-mt-24">
+            <h2 className="text-3xl font-medium mb-16 text-center">Our Team</h2>
 
-          {/* Faculty Section */}
-          <section className="mb-20 items-center">
-            <h2 className="text-3xl font-semibold mb-8 text-center">
-              Faculty Support
-            </h2>
-            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-8 items-center">
-              {faculties.map((faculty, index) => (
-                <div key={index} className="text-center group">
-                  <div className="relative mb-4 inline-block">
-                    <Image
-                      src={faculty.image}
-                      alt={faculty.name}
-                      width={160}
-                      height={160}
-                      className="rounded-full mx-auto mb-3 shadow-md group-hover:shadow-lg transition-shadow duration-300"
-                    />
-                    <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-10 rounded-full transition-all duration-300"></div>
+            {/* Executive Members */}
+            <div className="mb-20">
+              <h3 className="text-xl font-medium mb-12 text-center">
+                Executive Members
+              </h3>
+              <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-8">
+                {executives.map((exec, index) => (
+                  <div key={index} className="text-center group">
+                    <div className="relative mb-4">
+                      <Image
+                        src={exec.image}
+                        alt={exec.name}
+                        className="w-36 h-36 rounded-full mx-auto mb-3 grayscale hover:grayscale-0 transition-all duration-500"
+                      />
+                    </div>
+                    <h3 className="font-medium text-base">{exec.name}</h3>
+                    <p className="text-sm text-gray-500">{exec.position}</p>
                   </div>
-                  <h3 className="font-semibold text-lg text-black">
-                    {faculty.name}
-                  </h3>
-                  <p className="text-sm text-gray-600">{faculty.position}</p>
-                </div>
-              ))}
+                ))}
+              </div>
+            </div>
+
+            {/* Faculty Support */}
+            <div>
+              <h3 className="text-xl font-medium mb-12 text-center">
+                Faculty Support
+              </h3>
+              <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-8">
+                {faculties.map((faculty, index) => (
+                  <div key={index} className="text-center group">
+                    <div className="relative mb-4">
+                      <Image
+                        src={faculty.image}
+                        alt={faculty.name}
+                        className="w-36 h-36 rounded-full mx-auto mb-3 grayscale hover:grayscale-0 transition-all duration-500"
+                      />
+                    </div>
+                    <h3 className="font-medium text-base">{faculty.name}</h3>
+                    <p className="text-sm text-gray-500">{faculty.position}</p>
+                  </div>
+                ))}
+              </div>
             </div>
           </section>
 
           {/* Call to Action Section */}
-          <section className="mb-20 text-center bg-black text-white rounded-lg shadow-md p-12">
-            <h2 className="text-3xl font-semibold mb-6">Join Us</h2>
-            <p className="mb-8 text-lg">
-              Interested in becoming a member of UNO ACM? Click the button below
-              to sign up!
-            </p>
-            <a href="https://forms.office.com/r/8eKHQgyLjL" target="_blank">
-              <Button className="bg-white text-black text-lg px-8 py-3 hover:bg-gray-100 transition-transform duration-300 transform hover:scale-105">
-                Join UNO ACM
-              </Button>
-            </a>
+          <section className="mb-32 text-center">
+            <div className="bg-black text-white py-16 px-8 rounded-lg">
+              <h2 className="text-3xl font-medium mb-6">Join Us</h2>
+              <p className="mb-8 text-lg text-gray-300 max-w-2xl mx-auto">
+                Interested in becoming a member of UNO ACM? Click the button
+                below to sign up!
+              </p>
+              <a href="https://forms.office.com/r/8eKHQgyLjL" target="_blank">
+                <Button className="bg-white text-black hover:bg-gray-100 text-base px-8 py-6">
+                  Join UNO ACM
+                </Button>
+              </a>
+            </div>
           </section>
 
-          {/* Contact Us Section */}
-          <section className="text-center">
-            <h2 className="text-3xl font-semibold mb-8">Get in Touch</h2>
-            <div className="flex flex-wrap justify-center items-center space-x-6 sm:space-x-10 px-4">
-              <a
-                href="https://www.instagram.com/uno_acm"
-                target="_blank"
-                className="flex items-center text-gray-800 hover:text-black transition-colors duration-300 mb-4 sm:mb-0"
-              >
-                <Instagram size={28} />
-                <span className="ml-2 text-lg">Instagram</span>
-              </a>
-              <a
-                href="https://www.linkedin.com/company/104812824/"
-                target="_blank"
-                className="flex items-center text-gray-800 hover:text-black transition-colors duration-300 mb-4 sm:mb-0"
-              >
-                <Linkedin size={28} />
-                <span className="ml-2 text-lg">LinkedIn</span>
-              </a>
-              <a
-                href="https://github.com/uno-acm"
-                target="_blank"
-                className="flex items-center text-gray-800 hover:text-black transition-colors duration-300 mb-4 sm:mb-0"
-              >
-                <Github size={28} />
-                <span className="ml-2 text-lg">GitHub</span>
-              </a>
-              <a
-                href="https://discord.gg/pcWvbuw6B7"
-                target="_blank"
-                className="flex items-center text-gray-800 hover:text-black transition-colors duration-300 mb-4 sm:mb-0"
-              >
-                <MessageCircle size={28} />
-                <span className="ml-2 text-lg">CSCI Discord</span>
-              </a>
-              <a
-                href="mailto:acm@cs.uno.edu"
-                target="_blank"
-                className="flex items-center text-gray-800 hover:text-black transition-colors duration-300"
-              >
-                <Mail size={28} />
-                <span className="ml-2 text-lg">acm@cs.uno.edu</span>
-              </a>
+          {/* Contact Section */}
+          <section id="contact" className="scroll-mt-24">
+            <h2 className="text-3xl font-medium mb-16 text-center">
+              Connect With Us
+            </h2>
+            <div className="grid grid-cols-2 md:grid-cols-5 gap-6 max-w-4xl mx-auto">
+              {[
+                {
+                  icon: Instagram,
+                  text: "Instagram",
+                  link: "https://www.instagram.com/uno_acm",
+                },
+                {
+                  icon: Linkedin,
+                  text: "LinkedIn",
+                  link: "https://www.linkedin.com/company/104812824/",
+                },
+                {
+                  icon: Github,
+                  text: "GitHub",
+                  link: "https://github.com/uno-acm",
+                },
+                {
+                  icon: MessageCircle,
+                  text: "Discord",
+                  link: "https://discord.gg/pcWvbuw6B7",
+                },
+                {
+                  icon: Mail,
+                  text: "Email",
+                  link: "mailto:acm@cs.uno.edu",
+                },
+              ].map((item, index) => (
+                <a
+                  key={index}
+                  href={item.link}
+                  target="_blank"
+                  className="flex flex-col items-center p-6 rounded-lg hover:bg-gray-50 transition-all duration-300"
+                >
+                  <item.icon size={24} className="text-gray-800 mb-3" />
+                  <span className="text-sm font-medium text-gray-600">
+                    {item.text}
+                  </span>
+                </a>
+              ))}
             </div>
           </section>
         </main>
 
-        {/* Footer Section */}
-        <footer className="mt-20 text-center text-gray-600 border-t border-gray-200 pt-8">
+        {/* Footer */}
+        <footer className="mt-32 text-center text-gray-500 border-t border-gray-100 pt-8">
           <p>&copy; 2024 UNO ACM. All rights reserved.</p>
         </footer>
+
+        {/* Scroll to Top Button */}
+        <button
+          onClick={scrollToTop}
+          className={`fixed bottom-8 right-8 bg-black text-white p-3 rounded-full shadow-lg transition-all duration-300 ${
+            isScrolled
+              ? "opacity-100 translate-y-0"
+              : "opacity-0 translate-y-10"
+          }`}
+        >
+          <ChevronUp size={20} />
+        </button>
       </div>
     </div>
   );
