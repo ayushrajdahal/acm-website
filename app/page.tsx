@@ -18,7 +18,7 @@ const App = () => {
     {
       name: "Ayush R. Dahal",
       position: "President",
-      image: "/assets/ayush.jpg",
+      image: "/assets/ayush.jpeg",
     },
     {
       name: "Duy Nguyen",
@@ -28,32 +28,32 @@ const App = () => {
     {
       name: "Farzeen Nafees",
       position: "Co-Vice President",
-      image: "/assets/farzeen.jpg",
+      image: "/assets/farzeen.png",
     },
     {
       name: "Nhi Pham",
       position: "Secretary",
-      image: "/assets/nhi.jpg",
+      image: "/assets/nhi.png",
     },
     {
       name: "Dan Do",
       position: "Co-Treasurer",
-      image: "/assets/dan.jpg",
+      image: "/assets/dan.png",
     },
     {
       name: "David K. Timms",
       position: "Co-Treasurer",
-      image: "/assets/david.jpg",
+      image: "/assets/david.png",
     },
     {
       name: "Leanoria Guerin",
       position: "SCRUM Master",
-      image: "/assets/leanoria.jpeg",
+      image: "/assets/leanoria.png",
     },
     {
       name: "Ammar Kadic",
       position: "Workshop Chair",
-      image: "/assets/ammar.webp",
+      image: "/assets/ammar.png",
     },
     {
       name: "Spundun Gusain",
@@ -62,12 +62,40 @@ const App = () => {
     },
   ];
 
+  const faculties = [
+    {
+      name: "Dr. Christopher M. Summa",
+      position: "Faculty Sponsor",
+      image: "/assets/drsumma.png",
+    },
+    {
+      name: "Dr. Ted Holmberg",
+      position: "Industry Liaison",
+      image: "/assets/drholmberg.png",
+    },
+    {
+      name: "Dr. Vassil Roussev",
+      position: "Advisor",
+      image: "/assets/drroussev.png",
+    },
+    {
+      name: "Dr. Ben Samuel",
+      position: "Advisor",
+      image: "/assets/drsamuel.jpeg",
+    },
+    {
+      name: "Mr. David Pace",
+      position: "IT Director",
+      image: "/assets/mrpace.png",
+    },
+  ];
+
   // List of Events
   const events = [
     {
       title: "App Development Workshop",
       description:
-        "Learn How to Build Cross-Platform Apps Using Flutter and Firebase by Building a Real-time Chat Application.",
+        "Learn how to build cross-platform apps using Flutter and Firebase by building a real-time chat application.",
       // date: "October 19, 2024",
       // location: "UNO Math Building, Room 207",
       date: "November 18, 2024",
@@ -80,7 +108,7 @@ const App = () => {
         "Learn the essentials of Git version control for seamless collaboration and project management.",
       // date: "October 19, 2024",
       // location: "UNO Math Building, Room 207",
-      date: "TBD",
+      date: "Spring 2025",
       location: "TBD",
       actionLabel: "RSVP",
     },
@@ -172,9 +200,9 @@ const App = () => {
                     <Image
                       src={exec.image}
                       alt={exec.name}
-                      width={150}
-                      height={150}
-                      className="rounded-full mx-auto mb-3 shadow-md group-hover:shadow-lg transition-shadow duration-300 grayscale"
+                      width={160}
+                      height={160}
+                      className="rounded-full mx-auto mb-3 shadow-md group-hover:shadow-lg transition-shadow duration-300"
                     />
                     <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-10 rounded-full transition-all duration-300"></div>
                   </div>
@@ -182,6 +210,33 @@ const App = () => {
                     {exec.name}
                   </h3>
                   <p className="text-sm text-gray-600">{exec.position}</p>
+                </div>
+              ))}
+            </div>
+          </section>
+
+          {/* Faculty Section */}
+          <section className="mb-20 items-center">
+            <h2 className="text-3xl font-semibold mb-8 text-center">
+              Faculty Support
+            </h2>
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-8 items-center">
+              {faculties.map((faculty, index) => (
+                <div key={index} className="text-center group">
+                  <div className="relative mb-4 inline-block">
+                    <Image
+                      src={faculty.image}
+                      alt={faculty.name}
+                      width={160}
+                      height={160}
+                      className="rounded-full mx-auto mb-3 shadow-md group-hover:shadow-lg transition-shadow duration-300"
+                    />
+                    <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-10 rounded-full transition-all duration-300"></div>
+                  </div>
+                  <h3 className="font-semibold text-lg text-black">
+                    {faculty.name}
+                  </h3>
+                  <p className="text-sm text-gray-600">{faculty.position}</p>
                 </div>
               ))}
             </div>
