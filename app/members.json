@@ -1,0 +1,91 @@
+{
+    "executives": [
+      {
+        "id": 1,
+        "name": "Ayush R. Dahal",
+        "position": "President",
+        "image": "/assets/ayush.jpeg"
+      },
+      {
+        "id": 2,
+        "name": "Duy Nguyen",
+        "position": "Co-Vice President",
+        "image": "/assets/duy.png"
+      },
+      {
+        "id": 3,
+        "name": "Farzeen Nafees",
+        "position": "Co-Vice President",
+        "image": "/assets/farzeen.png"
+      },
+      {
+        "id": 4,
+        "name": "Nhi Pham",
+        "position": "Secretary",
+        "image": "/assets/nhi.png"
+      },
+      {
+        "id": 5,
+        "name": "Dan Do",
+        "position": "Co-Treasurer",
+        "image": "/assets/dan.png"
+      },
+      {
+        "id": 6,
+        "name": "David K. Timms",
+        "position": "Co-Treasurer",
+        "image": "/assets/david.png"
+      },
+      {
+        "id": 7,
+        "name": "Leanoria Guerin",
+        "position": "SCRUM Master",
+        "image": "/assets/leanoria.png"
+      },
+      {
+        "id": 8,
+        "name": "Ammar Kadic",
+        "position": "Workshop Chair",
+        "image": "/assets/ammar.png"
+      },
+      {
+        "id": 9,
+        "name": "Spundun Gusain",
+        "position": "SGA Ambassador",
+        "image": "/assets/spundun.png"
+      }
+    ],
+    "faculties": [
+      {
+        "id": 1,
+        "name": "Dr. Christopher M. Summa",
+        "position": "Faculty Sponsor",
+        "image": "/assets/drsumma.png"
+      },
+      {
+        "id": 2,
+        "name": "Dr. Ted Holmberg",
+        "position": "Industry Liaison",
+        "image": "/assets/drholmberg.png"
+      },
+      {
+        "id": 3,
+        "name": "Dr. Vassil Roussev",
+        "position": "Advisor",
+        "image": "/assets/drroussev.png"
+      },
+      {
+        "id": 4,
+        "name": "Dr. Ben Samuel",
+        "position": "Advisor",
+        "image": "/assets/drsamuel.jpeg"
+      },
+      {
+        "id": 5,
+        "name": "David Pace",
+        "position": "IT Director",
+        "image": "/assets/mrpace.png"
+      }
+    ]
+  }
+  

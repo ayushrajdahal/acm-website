@@ -1,0 +1,45 @@
+{
+    "events": [
+      {
+        "id": 1,
+        "title": "App Development Workshop",
+        "description": "Learn how to build cross-platform apps using Flutter and Firebase by building a real-time chat application.",
+        "date": "November 18, 2024",
+        "location": "Math Building, Room 317",
+        "actionLabel": "RSVP"
+      },
+      {
+        "id": 2,
+        "title": "UNO Social Mixer",
+        "description": "An opportunity for UNO students to learn about and interact with Computing and Engineering-related clubs across campus.",
+        "date": "September 23, 2024",
+        "location": "University Center, Room 208",
+        "actionLabel": "RSVP"
+      },
+      {
+        "id": 3,
+        "title": "Git Workshop",
+        "description": "Learn the essentials of Git version control for seamless collaboration and project management.",
+        "date": "Spring 2025",
+        "location": "TBD",
+        "actionLabel": "RSVP"
+      },
+      {
+        "id": 4,
+        "title": "Cloud Computing Workshop",
+        "description": "Learn the basics of cloud computing using Amazon Web Services. Work towards an official AWS certification.",
+        "date": "Spring 2025",
+        "location": "TBD",
+        "actionLabel": "RSVP"
+      },
+      {
+        "id": 5,
+        "title": "UNO Hack 2025",
+        "description": "A 48-hour innovation sprint where students turn bold ideas into reality with code.",
+        "date": "Spring 2025",
+        "location": "TBD",
+        "actionLabel": "RSVP"
+      }
+    ]
+  }
+  
