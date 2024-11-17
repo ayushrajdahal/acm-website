@@ -87,9 +87,14 @@ const App = () => {
                   Contact
                 </Link>
               </div>
-              <Button className="bg-black hover:bg-gray-800 text-sm">
-                Join Now
-              </Button>
+              <Link
+                href="https://forms.office.com/r/8eKHQgyLjL"
+                target="_blank"
+              >
+                <Button className="bg-black hover:bg-gray-800 text-sm">
+                  Join Now
+                </Button>
+              </Link>
             </div>
 
             {/* Mobile Menu Button */}
@@ -147,6 +152,8 @@ const App = () => {
             <Image
               src="/assets/logo.png"
               alt="ACM Logo"
+              width={400}
+              height={400}
               className="w-40 h-40 animate-float"
             />
             <div className="absolute inset-0 bg-gray-100 rounded-full blur-3xl -z-10"></div>
@@ -267,6 +274,8 @@ const App = () => {
                       <Image
                         src={exec.image}
                         alt={exec.name}
+                        width={400}
+                        height={400}
                         className="w-36 h-36 rounded-full mx-auto mb-3 grayscale hover:grayscale-0 transition-all duration-500"
                       />
                     </div>
@@ -289,6 +298,8 @@ const App = () => {
                       <Image
                         src={faculty.image}
                         alt={faculty.name}
+                        width={400}
+                        height={400}
                         className="w-36 h-36 rounded-full mx-auto mb-3 grayscale hover:grayscale-0 transition-all duration-500"
                       />
                     </div>
