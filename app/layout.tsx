@@ -15,7 +15,8 @@ const geistMono = localFont({
 
 export const metadata: Metadata = {
   title: "UNO ACM",
-  description: "University of New Orleans Chapter of Association for Computing Machinery",
+  description:
+    "University of New Orleans chapter of the Association for Computing Machinery",
 };
 
 export default function RootLayout({

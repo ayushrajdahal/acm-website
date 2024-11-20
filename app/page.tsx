@@ -14,8 +14,7 @@ import {
   Menu,
   X,
 } from "lucide-react";
-import { faculties, executives } from "./members.json";
-import { events } from "./events.json";
+import { events, faculties, executives, opportunities } from "./lists.json";
 import Link from "next/link";
 import Image from "next/image";
 
@@ -188,7 +187,7 @@ const App = () => {
           </div>
           <h1 className="text-5xl font-bold mb-6">UNO ACM</h1>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto leading-relaxed">
-            University of New Orleans Chapter of the Association for Computing
+            University of New Orleans chapter of the Association for Computing
             Machinery
           </p>
         </header>
@@ -205,23 +204,7 @@ const App = () => {
               for professional growth.
             </p>
             <div className="grid md:grid-cols-3 gap-8">
-              {[
-                {
-                  title: "Collaboration",
-                  description:
-                    "Work on interdisciplinary projects in groups, build lasting relationships.",
-                },
-                {
-                  title: "Learning",
-                  description:
-                    "Access workshops, seminars, and guest lectures hosted by industry experts and academics.",
-                },
-                {
-                  title: "Growth",
-                  description:
-                    "Develop professional skills and expand your career opportunities.",
-                },
-              ].map((item, index) => (
+              {opportunities.map((item, index) => (
                 <Card
                   key={index}
                   className="border-none shadow-md hover:shadow-xl transition-shadow duration-300"
