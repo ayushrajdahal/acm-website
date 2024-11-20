@@ -89,19 +89,27 @@
     ],
     "events": [
       {
+        "id": 0,
+        "title": "UNO Social Mixer",
+        "description": "An opportunity for UNO students to learn about and interact with Computing and Engineering-related clubs across campus.",
+        "date": "September 23, 2024",
+        "location": "University Center, Room 208",
+        "actionLabel": "RSVP"
+      },
+      {
         "id": 1,
         "title": "App Development Workshop",
         "description": "Learn how to build cross-platform apps using Flutter and Firebase by building a real-time chat application.",
-        "date": "November 25, 2024",
+        "date": "November 18, 2024",
         "location": "Math Building, Room 317",
         "actionLabel": "RSVP"
       },
       {
         "id": 2,
-        "title": "UNO Social Mixer",
-        "description": "An opportunity for UNO students to learn about and interact with Computing and Engineering-related clubs across campus.",
-        "date": "September 23, 2024",
-        "location": "University Center, Room 208",
+        "title": "App Development Workshop: Session 2",
+        "description": "Learn how to build cross-platform apps using Flutter and Firebase by building a real-time chat application.",
+        "date": "November 25, 2024",
+        "location": "Math Building, Room 317",
         "actionLabel": "RSVP"
       },
       {
