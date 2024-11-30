@@ -56,7 +56,7 @@ const App = () => {
     const today = new Date();
     today.setHours(0, 0, 0, 0); // Normalize today's date
 
-    return events.filter((event) => {
+    const filteredEvents = events.filter((event) => {
       if (activeFilter === "past") {
         // Include only valid dates in the past
         return isValidDate(event.date) && new Date(event.date) < today;
@@ -65,6 +65,15 @@ const App = () => {
       // Include future dates, today's date, and non-date elements
       return !isValidDate(event.date) || new Date(event.date) >= today;
     });
+
+    if (activeFilter === "past") {
+      // Sort past events by date, most recent first
+      return filteredEvents.sort(
+        (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
+      );
+    }
+
+    return filteredEvents;
   };
 
   const filteredEvents = filterEvents(events, activeFilter);
