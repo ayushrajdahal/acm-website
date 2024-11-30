@@ -1,185 +1,17 @@
-"use client";
-import React, { useState, useEffect } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import {
-  Instagram,
-  Github,
-  MessageCircle,
-  MapPin,
-  Calendar,
-  Mail,
-  Linkedin,
-  ChevronUp,
-  Menu,
-  X,
-} from "lucide-react";
-import { events, faculties, executives, opportunities } from "./lists.json";
-import Link from "next/link";
+import { Instagram, Github, MessageCircle, Mail, Linkedin } from "lucide-react";
+import { faculties, executives, opportunities } from "./lists.json";
 import Image from "next/image";
+import EventSection from "./EventsSection";
+import NavBar from "./NavBar";
+import ScrollToTop from "./ScrollToTop";
 
 const App = () => {
-  const [isScrolled, setIsScrolled] = useState(false);
-  const [activeFilter, setActiveFilter] = useState<"past" | "future">("future");
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 300);
-    };
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
-  const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  };
-
-  type Event = {
-    id: number;
-    title: string;
-    description: string;
-    date: string; // Dates are either valid date strings or descriptive text like "Spring 2025"
-    location: string;
-    actionLabel: string;
-  };
-
-  const isValidDate = (dateString: string): boolean => {
-    const parsedDate = new Date(dateString);
-    return !isNaN(parsedDate.getTime()); // Check if the parsed date is valid
-  };
-
-  const filterEvents = (
-    events: Event[],
-    activeFilter: "past" | "future"
-  ): Event[] => {
-    const today = new Date();
-    today.setHours(0, 0, 0, 0); // Normalize today's date
-
-    const filteredEvents = events.filter((event) => {
-      if (activeFilter === "past") {
-        // Include only valid dates in the past
-        return isValidDate(event.date) && new Date(event.date) < today;
-      }
-
-      // Include future dates, today's date, and non-date elements
-      return !isValidDate(event.date) || new Date(event.date) >= today;
-    });
-
-    if (activeFilter === "past") {
-      // Sort past events by date, most recent first
-      return filteredEvents.sort(
-        (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
-      );
-    }
-
-    return filteredEvents;
-  };
-
-  const filteredEvents = filterEvents(events, activeFilter);
-
   return (
     <div className="min-h-screen bg-white">
       {/* Navigation Bar */}
-      <nav className="fixed w-full top-0 bg-white/80 backdrop-blur-md border-b border-gray-100 z-50">
-        <div className="container mx-auto px-4 py-4">
-          <div className="flex justify-between items-center">
-            <div className="flex items-center space-x-4" onClick={scrollToTop}>
-              <Image
-                src="/assets/logo.png"
-                alt="ACM Logo"
-                width={40}
-                height={40}
-                className="w-10 h-10"
-              />
-              <span className="text-lg font-medium">UNO ACM</span>
-            </div>
-
-            {/* Desktop Navigation */}
-            <div className="hidden md:flex items-center space-x-8">
-              <div className="space-x-6">
-                <Link
-                  href="#about"
-                  className="text-gray-600 hover:text-black transition-colors text-sm"
-                >
-                  About
-                </Link>
-                <Link
-                  href="#events"
-                  className="text-gray-600 hover:text-black transition-colors text-sm"
-                >
-                  Events
-                </Link>
-                <Link
-                  href="#team"
-                  className="text-gray-600 hover:text-black transition-colors text-sm"
-                >
-                  Team
-                </Link>
-                <Link
-                  href="#contact"
-                  className="text-gray-600 hover:text-black transition-colors text-sm"
-                >
-                  Contact
-                </Link>
-              </div>
-              <Link
-                href="https://forms.office.com/r/8eKHQgyLjL"
-                target="_blank"
-              >
-                <Button className="bg-black hover:bg-gray-800 text-sm">
-                  Join Now
-                </Button>
-              </Link>
-            </div>
-
-            {/* Mobile Menu Button */}
-            <button
-              className="md:hidden"
-              onClick={() => setIsMenuOpen(!isMenuOpen)}
-            >
-              {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
-            </button>
-          </div>
-        </div>
-
-        {/* Mobile Navigation */}
-        <div
-          className={`md:hidden bg-white border-t border-gray-100 transition-all duration-300 ${
-            isMenuOpen ? "max-h-64" : "max-h-0 overflow-hidden"
-          }`}
-        >
-          <div className="container mx-auto px-4 py-4 flex flex-col space-y-4">
-            <a
-              href="#about"
-              className="text-gray-600 hover:text-black transition-colors"
-            >
-              About
-            </a>
-            <a
-              href="#events"
-              className="text-gray-600 hover:text-black transition-colors"
-            >
-              Events
-            </a>
-            <a
-              href="#team"
-              className="text-gray-600 hover:text-black transition-colors"
-            >
-              Team
-            </a>
-            <a
-              href="#contact"
-              className="text-gray-600 hover:text-black transition-colors"
-            >
-              Contact
-            </a>
-            <Button className="bg-black hover:bg-gray-800 w-full">
-              Join Now
-            </Button>
-          </div>
-        </div>
-      </nav>
+      <NavBar />
 
       <div className="container mx-auto px-4 py-12 mt-16">
         {/* Hero Section */}
@@ -232,51 +64,7 @@ const App = () => {
           </section>
 
           {/* Events Section */}
-          <section id="events" className="mb-32 scroll-mt-24">
-            <h2 className="text-3xl font-medium mb-16 text-center">Events</h2>
-            <div className="flex justify-center mb-12 space-x-4">
-              {["future", "past"].map((filter) => (
-                <Button
-                  key={filter}
-                  onClick={() => setActiveFilter(filter as "past" | "future")}
-                  className={`${
-                    activeFilter === filter
-                      ? "bg-black text-white"
-                      : "bg-gray-100 text-gray-700 hover:bg-gray-200"
-                  } capitalize`}
-                >
-                  {filter} Events
-                </Button>
-              ))}
-            </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              {filteredEvents.map((event, index) => (
-                <Card
-                  key={index}
-                  className="border border-gray-100 hover:border-gray-200 shadow-sm hover:shadow-md transition-all duration-300"
-                >
-                  <CardHeader className="border-b border-gray-50 bg-gray-50">
-                    <CardTitle className="text-lg font-medium text-center">
-                      {event.title}
-                    </CardTitle>
-                  </CardHeader>
-                  <CardContent className="p-6">
-                    <p className="text-gray-600 mb-4">{event.description}</p>
-                    <div className="space-y-2 text-sm text-gray-500">
-                      <div className="flex items-center">
-                        <Calendar className="mr-2" size={16} />
-                        <span>{event.date}</span>
-                      </div>
-                      <div className="flex items-center">
-                        <MapPin className="mr-2" size={16} />
-                        <span>{event.location}</span>
-                      </div>
-                    </div>
-                  </CardContent>
-                </Card>
-              ))}
-            </div>
-          </section>
+          <EventSection />
 
           {/* Team Section */}
           <section id="team" className="mb-32 scroll-mt-24">
@@ -402,16 +190,7 @@ const App = () => {
         </footer>
 
         {/* Scroll to Top Button */}
-        <button
-          onClick={scrollToTop}
-          className={`fixed bottom-8 right-8 bg-black text-white p-3 rounded-full shadow-lg transition-all duration-300 ${
-            isScrolled
-              ? "opacity-100 translate-y-0"
-              : "opacity-0 translate-y-10"
-          }`}
-        >
-          <ChevronUp size={20} />
-        </button>
+        <ScrollToTop />
       </div>
     </div>
   );
