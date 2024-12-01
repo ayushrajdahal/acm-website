@@ -14,13 +14,6 @@ const ScrollToTop = () => {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 300);
-    };
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
   return (
     <button
       onClick={scrollToTop}
