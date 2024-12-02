@@ -1,198 +1,138 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Instagram, Github, MessageCircle, Mail, Linkedin } from "lucide-react";
-import { faculties, executives, opportunities } from "./lists.json";
+import { opportunities } from "./content/opportunities.json";
 import Image from "next/image";
 import EventSection from "./EventsSection";
-import NavBar from "./NavBar";
-import ScrollToTop from "./ScrollToTop";
+import SponsorsSection from "./SponsorsSection";
+import TeamSection from "./TeamSection";
 
 const App = () => {
   return (
-    <div className="min-h-screen bg-white">
-      {/* Navigation Bar */}
-      <NavBar />
+    <>
+      {/* Hero Section */}
+      <header className="text-center mb-24 flex flex-col items-center">
+        <div className="relative mb-8">
+          <Image
+            src="/assets/logo.png"
+            alt="ACM Logo"
+            width={400}
+            height={400}
+            className="w-40 h-40 animate-float"
+          />
+          <div className="absolute inset-0 bg-gray-100 rounded-full blur-3xl -z-10"></div>
+        </div>
+        <h1 className="text-5xl font-bold mb-6">UNO ACM</h1>
+        <p className="text-lg text-gray-600 max-w-2xl mx-auto leading-relaxed">
+          University of New Orleans chapter of the Association for Computing
+          Machinery
+        </p>
+      </header>
 
-      <div className="container mx-auto px-4 py-12 mt-16">
-        {/* Hero Section */}
-        <header className="text-center mb-24 flex flex-col items-center">
-          <div className="relative mb-8">
-            <Image
-              src="/assets/logo.png"
-              alt="ACM Logo"
-              width={400}
-              height={400}
-              className="w-40 h-40 animate-float"
-            />
-            <div className="absolute inset-0 bg-gray-100 rounded-full blur-3xl -z-10"></div>
-          </div>
-          <h1 className="text-5xl font-bold mb-6">UNO ACM</h1>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto leading-relaxed">
-            University of New Orleans chapter of the Association for Computing
-            Machinery
+      <main>
+        {/* About Section */}
+        <section id="about" className="mb-32 scroll-mt-24">
+          <h2 className="text-3xl font-medium mb-16 text-center">About Us</h2>
+          <p className="text-center font-medium mb-16 mx-8">
+            We are the University of New Orleans chapter of the Association for
+            Computing Machinery (UNO ACM). Our mission is to foster a vibrant
+            community of computer science and engineering enthusiasts, promote
+            knowledge sharing, and provide unparalleled opportunities for
+            professional growth.
           </p>
-        </header>
+          <div className="grid md:grid-cols-3 gap-8">
+            {opportunities.map((item, index) => (
+              <Card
+                key={index}
+                className="border-none shadow-md hover:shadow-xl transition-shadow duration-300"
+              >
+                <CardHeader>
+                  <CardTitle className="text-center text-lg">
+                    {item.title}
+                  </CardTitle>
+                </CardHeader>
+                <CardContent className="text-center text-gray-600">
+                  {item.description}
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </section>
 
-        <main>
-          {/* About Section */}
-          <section id="about" className="mb-32 scroll-mt-24">
-            <h2 className="text-3xl font-medium mb-16 text-center">About Us</h2>
-            <p className="text-center font-medium mb-16 mx-8">
-              We are the University of New Orleans chapter of the Association
-              for Computing Machinery (UNO ACM). Our mission is to foster a
-              vibrant community of computer science and engineering enthusiasts,
-              promote knowledge sharing, and provide unparalleled opportunities
-              for professional growth.
+        {/* Events Section */}
+        <EventSection />
+
+        {/** Team Section */}
+        <TeamSection />
+
+        {/* Sponsors Section */}
+        <SponsorsSection />
+
+        {/* Call to Action Section */}
+        <section className="mb-32 text-center">
+          <div className="bg-black text-white py-16 px-8 rounded-lg">
+            <h2 className="text-3xl font-medium mb-6">Join Us</h2>
+            <p className="mb-8 text-lg text-gray-300 max-w-2xl mx-auto">
+              Interested in becoming a member of UNO ACM? Click the button below
+              to sign up!
             </p>
-            <div className="grid md:grid-cols-3 gap-8">
-              {opportunities.map((item, index) => (
-                <Card
-                  key={index}
-                  className="border-none shadow-md hover:shadow-xl transition-shadow duration-300"
-                >
-                  <CardHeader>
-                    <CardTitle className="text-center text-lg">
-                      {item.title}
-                    </CardTitle>
-                  </CardHeader>
-                  <CardContent className="text-center text-gray-600">
-                    {item.description}
-                  </CardContent>
-                </Card>
-              ))}
-            </div>
-          </section>
+            <a href="https://forms.office.com/r/8eKHQgyLjL" target="_blank">
+              <Button className="bg-white text-black hover:bg-gray-100 text-base px-8 py-6">
+                Join UNO ACM
+              </Button>
+            </a>
+          </div>
+        </section>
 
-          {/* Events Section */}
-          <EventSection />
-
-          {/* Team Section */}
-          <section id="team" className="mb-32 scroll-mt-24">
-            <h2 className="text-3xl font-medium mb-16 text-center">Our Team</h2>
-
-            {/* Executive Members */}
-            <div className="mb-20">
-              <h3 className="text-xl font-medium mb-12 text-center">
-                Executive Members
-              </h3>
-              <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-8">
-                {executives.map((exec, index) => (
-                  <div key={index} className="text-center group">
-                    <div className="relative mb-4">
-                      <Image
-                        src={exec.image}
-                        alt={exec.name}
-                        width={400}
-                        height={400}
-                        className="w-36 h-36 rounded-full mx-auto mb-3 grayscale hover:grayscale-0 transition-all duration-500"
-                      />
-                    </div>
-                    <h3 className="font-medium text-base">{exec.name}</h3>
-                    <p className="text-sm text-gray-500">{exec.position}</p>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            {/* Faculty Support */}
-            <div>
-              <h3 className="text-xl font-medium mb-12 text-center">
-                Faculty Support
-              </h3>
-              <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-8">
-                {faculties.map((faculty, index) => (
-                  <div key={index} className="text-center group">
-                    <div className="relative mb-4">
-                      <Image
-                        src={faculty.image}
-                        alt={faculty.name}
-                        width={400}
-                        height={400}
-                        className="w-36 h-36 rounded-full mx-auto mb-3 grayscale hover:grayscale-0 transition-all duration-500"
-                      />
-                    </div>
-                    <h3 className="font-medium text-base">{faculty.name}</h3>
-                    <p className="text-sm text-gray-500">{faculty.position}</p>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </section>
-
-          {/* Call to Action Section */}
-          <section className="mb-32 text-center">
-            <div className="bg-black text-white py-16 px-8 rounded-lg">
-              <h2 className="text-3xl font-medium mb-6">Join Us</h2>
-              <p className="mb-8 text-lg text-gray-300 max-w-2xl mx-auto">
-                Interested in becoming a member of UNO ACM? Click the button
-                below to sign up!
-              </p>
-              <a href="https://forms.office.com/r/8eKHQgyLjL" target="_blank">
-                <Button className="bg-white text-black hover:bg-gray-100 text-base px-8 py-6">
-                  Join UNO ACM
-                </Button>
+        {/* Contact Section */}
+        <section id="contact" className="scroll-mt-24">
+          <h2 className="text-3xl font-medium mb-16 text-center">
+            Connect With Us
+          </h2>
+          <div className="grid grid-cols-2 md:grid-cols-5 gap-6 max-w-4xl mx-auto">
+            {[
+              {
+                icon: Instagram,
+                text: "Instagram",
+                link: "https://www.instagram.com/uno_acm",
+              },
+              {
+                icon: Linkedin,
+                text: "LinkedIn",
+                link: "https://www.linkedin.com/company/104812824/",
+              },
+              {
+                icon: Github,
+                text: "GitHub",
+                link: "https://github.com/uno-acm",
+              },
+              {
+                icon: MessageCircle,
+                text: "Discord",
+                link: "https://discord.gg/pcWvbuw6B7",
+              },
+              {
+                icon: Mail,
+                text: "Email",
+                link: "mailto:acm@cs.uno.edu",
+              },
+            ].map((item, index) => (
+              <a
+                key={index}
+                href={item.link}
+                target="_blank"
+                className="flex flex-col items-center p-6 rounded-lg hover:bg-gray-50 transition-all duration-300"
+              >
+                <item.icon size={24} className="text-gray-800 mb-3" />
+                <span className="text-sm font-medium text-gray-600">
+                  {item.text}
+                </span>
               </a>
-            </div>
-          </section>
-
-          {/* Contact Section */}
-          <section id="contact" className="scroll-mt-24">
-            <h2 className="text-3xl font-medium mb-16 text-center">
-              Connect With Us
-            </h2>
-            <div className="grid grid-cols-2 md:grid-cols-5 gap-6 max-w-4xl mx-auto">
-              {[
-                {
-                  icon: Instagram,
-                  text: "Instagram",
-                  link: "https://www.instagram.com/uno_acm",
-                },
-                {
-                  icon: Linkedin,
-                  text: "LinkedIn",
-                  link: "https://www.linkedin.com/company/104812824/",
-                },
-                {
-                  icon: Github,
-                  text: "GitHub",
-                  link: "https://github.com/uno-acm",
-                },
-                {
-                  icon: MessageCircle,
-                  text: "Discord",
-                  link: "https://discord.gg/pcWvbuw6B7",
-                },
-                {
-                  icon: Mail,
-                  text: "Email",
-                  link: "mailto:acm@cs.uno.edu",
-                },
-              ].map((item, index) => (
-                <a
-                  key={index}
-                  href={item.link}
-                  target="_blank"
-                  className="flex flex-col items-center p-6 rounded-lg hover:bg-gray-50 transition-all duration-300"
-                >
-                  <item.icon size={24} className="text-gray-800 mb-3" />
-                  <span className="text-sm font-medium text-gray-600">
-                    {item.text}
-                  </span>
-                </a>
-              ))}
-            </div>
-          </section>
-        </main>
-
-        {/* Footer */}
-        <footer className="mt-32 text-center text-gray-500 border-t border-gray-100 pt-8">
-          <p>&copy; 2024 UNO ACM. All rights reserved.</p>
-        </footer>
-
-        {/* Scroll to Top Button */}
-        <ScrollToTop />
-      </div>
-    </div>
+            ))}
+          </div>
+        </section>
+      </main>
+    </>
   );
 };
 
