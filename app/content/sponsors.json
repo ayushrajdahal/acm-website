@@ -1,0 +1,10 @@
+{
+    "sponsors": [
+        {
+            "id": 1,
+            "name": "DataCamp",
+            "image": "/assets/datacamp.png",
+            "url": "https://www.datacamp.com/"
+        }
+    ]
+}

@@ -1,0 +1,22 @@
+{
+    "opportunities": [
+    {
+      "id": 1,
+      "title": "Collaboration",
+      "description":
+        "Work on interdisciplinary projects in groups, build lasting relationships."
+    },
+    {
+      "id": 2,
+      "title": "Learning",
+      "description":
+        "Access workshops, seminars, and guest lectures hosted by industry experts and academics."
+    },
+    {
+      "id": 3,
+      "title": "Growth",
+      "description":
+        "Develop professional skills and expand your career opportunities."
+    }
+  ]
+}

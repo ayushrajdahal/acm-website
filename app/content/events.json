@@ -1,0 +1,60 @@
+{
+    "events": [
+      {
+        "id": 0,
+        "title": "UNO Social Mixer",
+        "description": "An opportunity for UNO students to learn about and interact with Computing and Engineering-related clubs across campus.",
+        "date": "September 23, 2024",
+        "location": "University Center, Room 208",
+        "actionLabel": "RSVP"
+      },
+      {
+        "id": 1,
+        "title": "App Development Workshop: Session 1",
+        "description": "Learn how to build cross-platform apps using Flutter and Firebase by building a real-time chat application.",
+        "date": "November 18, 2024",
+        "location": "Math Building, Room 317",
+        "actionLabel": "RSVP"
+      },
+      {
+        "id": 2,
+        "title": "App Development Workshop: Session 2",
+        "description": "Learn how to build cross-platform apps using Flutter and Firebase by building a real-time chat application.",
+        "date": "November 25, 2024",
+        "location": "Math Building, Room 317",
+        "actionLabel": "RSVP"
+      },
+      {
+        "id": 3,
+        "title": "Git Workshop",
+        "description": "Learn the essentials of Git version control for seamless collaboration and project management.",
+        "date": "Spring 2025",
+        "location": "TBD",
+        "actionLabel": "RSVP"
+      },
+      {
+        "id": 4,
+        "title": "Vim Workshop",
+        "description": "Learn essential code editing techniques and productivity tips to streamline your coding workflow using Vim.",
+        "date": "Spring 2025",
+        "location": "TBD",
+        "actionLabel": "RSVP"
+      },
+      {
+        "id": 5,
+        "title": "Cloud Computing Workshop",
+        "description": "Learn the basics of cloud computing using Amazon Web Services. Work towards an official AWS certification.",
+        "date": "Spring 2025",
+        "location": "TBD",
+        "actionLabel": "RSVP"
+      },
+      {
+        "id": 6,
+        "title": "UNO Hack 2025",
+        "description": "A 48-hour innovation sprint where students turn bold ideas into reality with code.",
+        "date": "Spring 2025",
+        "location": "TBD",
+        "actionLabel": "RSVP"
+      }
+    ]
+}

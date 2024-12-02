@@ -1,0 +1,34 @@
+{
+    "faculties": [
+      {
+        "id": 1,
+        "name": "Dr. Christopher M. Summa",
+        "position": "Faculty Sponsor",
+        "image": "/assets/drsumma.png"
+      },
+      {
+        "id": 2,
+        "name": "Dr. Ted Holmberg",
+        "position": "Industry Liaison",
+        "image": "/assets/drholmberg.png"
+      },
+      {
+        "id": 3,
+        "name": "Dr. Vassil Roussev",
+        "position": "Advisor",
+        "image": "/assets/drroussev.png"
+      },
+      {
+        "id": 4,
+        "name": "Dr. Ben Samuel",
+        "position": "Advisor",
+        "image": "/assets/drsamuel.jpeg"
+      },
+      {
+        "id": 5,
+        "name": "David Pace",
+        "position": "IT Director",
+        "image": "/assets/mrpace.png"
+      }
+    ]
+}

@@ -1,6 +1,6 @@
 "use client";
 import React, { useState } from "react";
-import { events } from "./lists.json";
+import { events } from "./content/events.json";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Calendar, MapPin } from "lucide-react";
