@@ -6,6 +6,7 @@ import Image from "next/image";
 import EventSection from "./EventsSection";
 import SponsorsSection from "./SponsorsSection";
 import TeamSection from "./TeamSection";
+import Link from "next/link";
 
 const App = () => {
   return (
@@ -76,11 +77,11 @@ const App = () => {
               Interested in becoming a member of UNO ACM? Click the button below
               to sign up!
             </p>
-            <a href="https://forms.office.com/r/8eKHQgyLjL" target="_blank">
+            <Link href="/join">
               <Button className="bg-white text-black hover:bg-gray-100 text-base px-8 py-6">
                 Join UNO ACM
               </Button>
-            </a>
+            </Link>
           </div>
         </section>
 

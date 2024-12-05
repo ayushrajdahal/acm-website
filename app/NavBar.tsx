@@ -58,14 +58,14 @@ const NavBar = () => {
               >
                 Contact
               </Link>
-              {/* <Link
+              <Link
                 href="/fellowship"
                 className="text-gray-600 hover:text-black transition-colors text-sm"
               >
                 Data Fellowship
-              </Link> */}
+              </Link>
             </div>
-            <Link href="https://forms.office.com/r/8eKHQgyLjL" target="_blank">
+            <Link href="/join">
               <Button className="bg-black hover:bg-gray-800 text-sm">
                 Join Now
               </Button>
@@ -119,15 +119,17 @@ const NavBar = () => {
           >
             Contact
           </Link>
-          {/* <Link
+          <Link
             href="/fellowship"
             className="text-gray-600 hover:text-black transition-colors"
           >
             Data Fellowship
-          </Link> */}
-          <Button className="bg-black hover:bg-gray-800 w-full">
-            Join Now
-          </Button>
+          </Link>
+          <Link href="/join">
+            <Button className="bg-black hover:bg-gray-800 text-sm">
+              Join Now
+            </Button>
+          </Link>
         </div>
       </div>
     </nav>
