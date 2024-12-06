@@ -4,19 +4,19 @@
         "id": 1,
         "name": "Dr. Christopher M. Summa",
         "position": "Faculty Sponsor",
-        "image": "/assets/drsumma.png"
+        "image": "/assets/drsumma.jpg"
       },
       {
         "id": 2,
         "name": "Dr. Ted Holmberg",
         "position": "Industry Liaison",
-        "image": "/assets/drholmberg.png"
+        "image": "/assets/drholmberg.jpg"
       },
       {
         "id": 3,
         "name": "Dr. Vassil Roussev",
         "position": "Advisor",
-        "image": "/assets/drroussev.png"
+        "image": "/assets/drroussev.jpg"
       },
       {
         "id": 4,
@@ -28,7 +28,7 @@
         "id": 5,
         "name": "David Pace",
         "position": "IT Director",
-        "image": "/assets/mrpace.png"
+        "image": "/assets/mrpace.jpg"
       }
     ]
 }
