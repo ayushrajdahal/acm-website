@@ -18,7 +18,19 @@ const EventSection = () => {
 
   const isValidDate = (dateString: string): boolean => {
     const parsedDate = new Date(dateString);
-    return !isNaN(parsedDate.getTime()); // Check if the parsed date is valid
+    if (!isNaN(parsedDate.getTime())) {
+      return true; // Check if the parsed date is valid
+    }
+
+    // Check for "Spring {year}" or "Fall {year}"
+    const seasonYearRegex = /^(Spring|Fall) \d{4}$/;
+    return seasonYearRegex.test(dateString);
+  };
+
+  const getSeasonDate = (seasonString: string): Date => {
+    const [season, year] = seasonString.split(" ");
+    const month = season === "Spring" ? 4 : 10; // May for Spring, November for Fall
+    return new Date(parseInt(year), month, 1);
   };
 
   const filterEvents = (
@@ -31,18 +43,28 @@ const EventSection = () => {
     const filteredEvents = events.filter((event) => {
       if (activeFilter === "past") {
         // Include only valid dates in the past
-        return isValidDate(event.date) && new Date(event.date) < today;
+        if (isValidDate(event.date)) {
+          const eventDate = getSeasonDate(event.date) || new Date(event.date);
+          return eventDate < today;
+        }
+        return false;
       }
 
       // Include future dates, today's date, and non-date elements
-      return !isValidDate(event.date) || new Date(event.date) >= today;
+      if (isValidDate(event.date)) {
+        const eventDate = getSeasonDate(event.date) || new Date(event.date);
+        return eventDate >= today;
+      }
+      return true;
     });
 
     if (activeFilter === "past") {
       // Sort past events by date, most recent first
-      return filteredEvents.sort(
-        (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
-      );
+      return filteredEvents.sort((a, b) => {
+        const dateA = getSeasonDate(a.date) || new Date(a.date);
+        const dateB = getSeasonDate(b.date) || new Date(b.date);
+        return dateB.getTime() - dateA.getTime();
+      });
     }
 
     return filteredEvents;

@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
-import NavBar from "./NavBar";
-import ScrollToTop from "./ScrollToTop";
-import Footer from "./Footer";
+import NavBar from "@/components/ui/NavBar";
+import ScrollToTop from "@/components/ui/ScrollToTop";
+import Footer from "@/components/ui/Footer";
+import ContactSection from "@/components/ui/ContactSection";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -37,6 +38,7 @@ export default function RootLayout({
           <div className="container mx-auto px-4 py-12 mt-16">
             {children}
             <ScrollToTop />
+            <ContactSection />
             <Footer />
           </div>
         </div>
