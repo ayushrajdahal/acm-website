@@ -1,4 +1,5 @@
 import React from "react";
+import ContactSection from "../../components/ui/ContactSection";
 
 const page = () => {
   return (
