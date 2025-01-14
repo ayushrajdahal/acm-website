@@ -25,7 +25,15 @@
         "actionLabel": "RSVP"
       },
       {
-        "id": 3,
+        "id": 4,
+        "title": "Bash Workshop",
+        "description": "Learn Bash scripting techniques for automation and efficiency.",
+        "date": "Fall 2025",
+        "location": "Online",
+        "actionLabel": "Register"
+      },
+      {
+        "id": 4,
         "title": "Git Workshop",
         "description": "Learn the essentials of Git version control for seamless collaboration and project management.",
         "date": "Spring 2025",
@@ -33,7 +41,7 @@
         "actionLabel": "RSVP"
       },
       {
-        "id": 4,
+        "id": 5,
         "title": "Vim Workshop",
         "description": "Learn essential code editing techniques and productivity tips to streamline your coding workflow using Vim.",
         "date": "Spring 2025",
@@ -41,17 +49,9 @@
         "actionLabel": "RSVP"
       },
       {
-        "id": 5,
+        "id": 6,
         "title": "Cloud Computing Workshop",
         "description": "Learn the basics of cloud computing using Amazon Web Services. Work towards an official AWS certification.",
-        "date": "Spring 2025",
-        "location": "TBD",
-        "actionLabel": "RSVP"
-      },
-      {
-        "id": 6,
-        "title": "UNO Hack 2025",
-        "description": "A 48-hour innovation sprint where students turn bold ideas into reality with code.",
         "date": "Spring 2025",
         "location": "TBD",
         "actionLabel": "RSVP"
