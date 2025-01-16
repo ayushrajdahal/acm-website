@@ -28,24 +28,24 @@
         "id": 4,
         "title": "Bash Workshop",
         "description": "Learn Bash scripting techniques for automation and efficiency.",
-        "date": "Spring 2025",
-        "location": "TBD",
+        "date": "January 21, 2025",
+        "location": "Math Building, Room 209",
         "actionLabel": "Register"
       },
       {
         "id": 4,
         "title": "Git Workshop",
         "description": "Learn the essentials of Git version control for seamless collaboration and project management.",
-        "date": "Spring 2025",
-        "location": "TBD",
+        "date": "January 23, 2025",
+        "location": "Math Building, Room 209",
         "actionLabel": "RSVP"
       },
       {
         "id": 5,
         "title": "Vim Workshop",
         "description": "Learn essential code editing techniques and productivity tips to streamline your coding workflow using Vim.",
-        "date": "Spring 2025",
-        "location": "TBD",
+        "date": "January 28, 2025",
+        "location": "Math Building, Room 209",
         "actionLabel": "RSVP"
       },
       {
