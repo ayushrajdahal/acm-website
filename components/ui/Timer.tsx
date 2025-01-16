@@ -10,22 +10,22 @@ class Timer extends React.Component {
   };
 
   componentDidMount() {
-    let date = new Date();
+    const date = new Date();
     // set the date to 21 january, 2025 5 PM CST
     date.setFullYear(2025, 0, 21);
     date.setHours(17);
     date.setMinutes(0);
     // date.setDate(date.getDate() + 2);
-    let countDownDate = new Date(date).getTime();
+    const countDownDate = new Date(date).getTime();
     setInterval(() => {
-      let now = new Date().getTime();
-      let distance = countDownDate - now;
-      let days = Math.floor(distance / (1000 * 60 * 60 * 24));
-      let hours = Math.floor(
+      const now = new Date().getTime();
+      const distance = countDownDate - now;
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor(
         (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
       );
-      let minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-      let seconds = Math.floor((distance % (1000 * 60)) / 1000);
+      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
       this.setState({
         minutes: minutes,
         days: days,
