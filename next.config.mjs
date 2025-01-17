@@ -8,7 +8,7 @@ const nextConfig = {
   async redirects() {
     return [
       {
-        source: '/workshop*',
+        source: '/:workshop',
         destination: 'https://uno.zoom.us/j/88075597346',
         permanent: true,
       },
