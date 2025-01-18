@@ -59,6 +59,12 @@ const NavBar = () => {
                 Contact
               </Link>
               <Link
+                href="/workshop"
+                className="text-gray-600 hover:text-black transition-colors text-sm"
+              >
+                Workshop
+              </Link>
+              <Link
                 href="/fellowship"
                 className="text-gray-600 hover:text-black transition-colors text-sm"
               >

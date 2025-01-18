@@ -6,6 +6,7 @@
         "description": "An opportunity for UNO students to learn about and interact with Computing and Engineering-related clubs across campus.",
         "date": "September 23, 2024",
         "location": "University Center, Room 208",
+        "time": "12:30 PM - 2:00 PM",
         "actionLabel": "RSVP"
       },
       {
@@ -14,6 +15,7 @@
         "description": "Learn how to build cross-platform apps using Flutter and Firebase by building a real-time chat application.",
         "date": "November 18, 2024",
         "location": "Math Building, Room 317",
+        "time": "12:30 PM - 2:00 PM",
         "actionLabel": "RSVP"
       },
       {
@@ -22,6 +24,7 @@
         "description": "Learn how to build cross-platform apps using Flutter and Firebase by building a real-time chat application.",
         "date": "November 25, 2024",
         "location": "Math Building, Room 317",
+        "time": "12:30 PM - 2:00 PM",
         "actionLabel": "RSVP"
       },
       {
@@ -30,6 +33,8 @@
         "description": "Learn Bash scripting techniques for automation and efficiency.",
         "date": "January 21, 2025",
         "location": "Math Building, Room 209",
+        "time": "5:00 PM - 6:15 PM",
+        "zoomLink": "https://uno.zoom.us/j/88075597346",
         "actionLabel": "Register"
       },
       {
@@ -38,6 +43,8 @@
         "description": "Learn the essentials of Git version control for seamless collaboration and project management.",
         "date": "January 23, 2025",
         "location": "Math Building, Room 209",
+        "time": "5:00 PM - 6:15 PM",
+        "zoomLink": "https://uno.zoom.us/j/89680912956",
         "actionLabel": "RSVP"
       },
       {
@@ -46,6 +53,8 @@
         "description": "Learn essential code editing techniques and productivity tips to streamline your coding workflow using Vim.",
         "date": "January 28, 2025",
         "location": "Math Building, Room 209",
+        "time": "5:00 PM - 6:15 PM",
+        "zoomLink": "https://uno.zoom.us/j/87434704206",
         "actionLabel": "RSVP"
       },
       {
@@ -54,6 +63,7 @@
         "description": "Learn the basics of cloud computing using Amazon Web Services. Work towards an official AWS certification.",
         "date": "March 2025",
         "location": "TBD",
+        "time": "TBD",
         "actionLabel": "RSVP"
       }
     ]

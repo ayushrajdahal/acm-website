@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import { events } from "./content/events.json";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Calendar, MapPin } from "lucide-react";
+import { Calendar, MapPin, Clock } from "lucide-react";
 
 const EventSection = () => {
   const [activeFilter, setActiveFilter] = useState<"past" | "future">("future");
@@ -14,6 +14,7 @@ const EventSection = () => {
     date: string; // Dates are either valid date strings or descriptive text like "Spring 2025"
     location: string;
     actionLabel: string;
+    time: string;
   };
 
   const isValidDate = (dateString: string): boolean => {
@@ -86,6 +87,10 @@ const EventSection = () => {
                   <div className="flex items-center">
                     <Calendar className="mr-2" size={16} />
                     <span>{event.date}</span>
+                  </div>
+                  <div className="flex items-center">
+                    <Clock className="mr-2" size={16} />
+                    <span>{event.time}</span>
                   </div>
                   <div className="flex items-center">
                     <MapPin className="mr-2" size={16} />
