@@ -8,7 +8,7 @@ interface TimerState {
   days: number;
 }
 
-class Timer extends React.Component<{}, TimerState> {
+class Timer extends React.Component<object, TimerState> {
   interval: NodeJS.Timeout | undefined;
 
   state: TimerState = {
