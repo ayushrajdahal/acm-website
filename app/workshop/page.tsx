@@ -6,11 +6,6 @@ import EventSection from "../EventsSection";
 
 const events = [
   {
-    name: "Bash Workshop",
-    date: new Date("2025-01-21T23:00:00Z"), // 5 PM CST is 11 PM UTC
-    zoomLink: "https://uno.zoom.us/j/82594180263",
-  },
-  {
     name: "Git Workshop",
     date: new Date("2025-01-23T23:00:00Z"), // 5 PM CST is 11 PM UTC
     zoomLink: "https://uno.zoom.us/j/86753001896",
