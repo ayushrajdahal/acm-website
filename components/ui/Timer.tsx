@@ -19,7 +19,7 @@ class Timer extends React.Component<object, TimerState> {
   };
 
   componentDidMount() {
-    const targetDate = new Date("2025-01-21T23:00:00Z"); // 5 PM CST is 11 PM UTC
+    const targetDate = new Date("2025-01-23T23:00:00Z"); // 5 PM CST is 11 PM UTC
     this.updateTimer(targetDate);
     this.interval = setInterval(() => this.updateTimer(targetDate), 1000);
   }
@@ -60,7 +60,7 @@ class Timer extends React.Component<object, TimerState> {
     const { minutes, seconds, hours, days } = this.state;
     return (
       <div className="flex flex-col items-center justify-center mb-8 mt-16">
-        <h2 className="text-5xl font-semibold mb-4">Bash Workshop Starts In</h2>
+        <h2 className="text-5xl font-semibold mb-4">Git Workshop Starts In</h2>
         <h1 className="text-9xl font-bold mb-6">
           {days < 10 ? `${days}` : days}d {hours < 10 ? `${hours}` : hours}h{" "}
           {minutes < 10 ? `${minutes}` : minutes}m{" "}
