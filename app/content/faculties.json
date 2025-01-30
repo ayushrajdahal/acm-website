@@ -23,12 +23,6 @@
         "name": "Dr. Ben Samuel",
         "position": "Advisor",
         "image": "/assets/drsamuel.jpeg"
-      },
-      {
-        "id": 5,
-        "name": "David Pace",
-        "position": "IT Director",
-        "image": "/assets/mrpace.jpg"
       }
     ]
 }
