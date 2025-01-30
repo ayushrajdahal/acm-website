@@ -13,7 +13,7 @@ const TeamSection = () => {
         <h3 className="text-xl font-medium mb-12 text-center">
           Executive Members
         </h3>
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-8">
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-8">
           {executives.map((exec, index) => (
             <div key={index} className="text-center group">
               <div className="relative mb-4">
@@ -37,7 +37,7 @@ const TeamSection = () => {
         <h3 className="text-xl font-medium mb-12 text-center">
           Faculty Support
         </h3>
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-8">
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-8">
           {faculties.map((faculty, index) => (
             <div key={index} className="text-center group">
               <div className="relative mb-4">
