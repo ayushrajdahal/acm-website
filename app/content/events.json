@@ -58,16 +58,6 @@
         "actionLabel": "RSVP"
       },
       {
-        "id": 6,
-        "title": "Advanced Bash Workshop",
-        "description": "Learn Bash scripting techniques for automation and efficiency.",
-        "date": "February 4, 2025",
-        "location": "Math Building, Room 209",
-        "time": "5:00 PM - 6:15 PM",
-        "zoomLink": "",
-        "actionLabel": "RSVP"
-      },
-      {
         "id": 7,
         "title": "Cloud Computing Workshop",
         "description": "Learn the basics of cloud computing using Amazon Web Services. Work towards an official AWS certification.",
